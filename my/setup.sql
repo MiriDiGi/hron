@@ -5,7 +5,7 @@ use hron;
 
 -- cleanup
 
-drop table if exists car_service;
+drop table if exists car_service;  -- elimina le tabelle se esistono
 drop table if exists service;
 drop table if exists car;
 call drop_fk_if_exists('department', 'department_manager_fk');
@@ -19,7 +19,7 @@ drop table if exists job;
 drop procedure if exists get_employee_car;
 drop procedure if exists get_employee_salary;
 
--- simple: "one" region, many countries
+-- simple: "one" region, many countries  crea tabelle e inseriscono righe
 create table region(
 	region_id integer primary key auto_increment,
 	name varchar(25)

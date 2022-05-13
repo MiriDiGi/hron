@@ -2,7 +2,7 @@
 use hron;
 
 -- Treasury is a department
-select name
+select department_id, name
 from department
 where department_id in (11, 12);
 
@@ -23,3 +23,8 @@ select e.first_name, e.last_name, d.name
 from department d left outer join employee e
 using (department_id)
 where d.department_id in (11, 12);
+
+-- voglio vedere anche dipartimenti che non hanno indirizzo (location null), quindi la direzione del join sarà sul department
+select l.street_address, l.city, d.name
+from location l right join department d
+on l.location_id = d.location_id;

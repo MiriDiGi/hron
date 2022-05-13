@@ -1,15 +1,15 @@
--- run it on MySQL as root
+-- run it on MySQL as root   sono i commenti di sql
 -- creates user and schema hron
 
-drop user if exists hron;
-drop schema if exists hron;
+drop user if exists hron;   -- elimina l'utente hron se esiste con drop
+drop schema if exists hron;     -- elimina lo schema hron se esiste
 
 -- !!! change password !!!
-create user hron identified by 'password';
-create schema hron;
+create user hron identified by 'password';  -- crea l'utente hron con la password password
+create schema hron;  -- lo schema non ha bisogno di una pass, crea lo schema hron
 
-grant all privileges on hron.* to hron;
-grant alter routine on hron.* to hron;
+grant all privileges on hron.* to hron;   -- dai tutti i privilegi a hron ma SOLO sullo schema hron
+grant alter routine on hron.* to hron;   -- 
 
 use hron;
 

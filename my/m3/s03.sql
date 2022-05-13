@@ -27,9 +27,11 @@ select sqrt(25), sqrt(5), sqrt(-2);
 select ln(exp(1)), log(exp(1)), log(10, 100);
 
 -- rounding
+-- arrotonda, arrotonda ad una sola cifra decimale, attonda alle decine
 select round(5.75), round(5.75, 1), round(5.75, -1);
 
 -- truncating
+-- butta via la parte decimale
 select truncate(5.75, 0), truncate(5.75, 1), truncate(5.75, -1);
 
 -- check negative, zero, positive

@@ -11,6 +11,7 @@ from department
 where name like 'P%';
 
 -- ... could give a combined result set
+-- faccio due query diverse e le unisco con union
 	select title as name, 'job' as origin
 	from job
 	where title like 'P%'
@@ -19,3 +20,4 @@ union
 	from department
 	where name like 'P%'
 order by name;
+

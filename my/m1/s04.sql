@@ -15,3 +15,15 @@ where salary < 3000 and employee_id > 160;
 select *
 from employee
 where salary < 2200 or last_name = 'King';
+
+select *
+from employee
+where department_id = 5 or department_id = 3;
+
+select *
+from employee
+where department_id = 3 and hired < '2021-01-01';
+
+select *
+from employee
+where first_name = "john" or first_name = "julia";

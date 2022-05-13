@@ -2,6 +2,7 @@
 use hron;
 
 -- group by department and job, but keep only the departments having name ending in 'ing'
+-- voglio vedere solo quelli che finiscono per ing
 select d.name as Department, j.title as 'Job Title'
 from department d join employee e using (department_id)
 	join job j using (job_id)
@@ -12,6 +13,7 @@ having d.name like '%ing';
 -- group them by manager id
 -- keep the groups with an average salary above 6000
 -- and order the result by the the second column, descending
+-- il filtraggio del where viene fatto prima mentre having viene fatto dopo
 select manager_id, round(avg(salary))
 from employee
 where salary < 8000
@@ -20,6 +22,7 @@ having avg(salary) > 6000
 order by 2 desc;
 
 -- average salary for department, excluding "null" department and low average ones
+-- con il where escludo i null
 select d.name, truncate(avg(e.salary), 0) as 'avg salary'
 from employee e join department d
 using(department_id)

@@ -23,3 +23,12 @@ union
 	from employee e right outer join department d
 	using (department_id)
 	where d.department_id = 12 or e.last_name = 'Grant';
+
+	select d.name, l.city
+    from department d left join location l
+    on l.location_id = d.location_id
+union
+	select d.name, l.city
+    from department d right join location l
+    on l.location_id = d.department_id
+    order by name;

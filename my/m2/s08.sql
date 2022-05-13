@@ -2,6 +2,7 @@
 use hron;
 
 -- cartesian product - following the SQL/92 syntax
+-- metodo migliore
 select r.name, s.name
 from region r cross join service s;
 
